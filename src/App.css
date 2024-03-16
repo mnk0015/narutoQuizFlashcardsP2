@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  padding-left: 40px;
-  padding-right: 30px;
+  padding: 20px; /* Add padding to body */
   font-family: Arial, sans-serif;
   background-color: #e74c3c; /* Naruto-themed red */
   color: #fff; /* White text color */
@@ -11,14 +10,11 @@ body {
   display: flex;
   flex-direction: column; /* To stack title and game */
   align-items: center;
-  padding-top: 20px; /* Add space at the top */
-  max-width: 300px;
 }
 
 .Title {
   font-size: 32px;
   margin-bottom: 20px; /* Add space below the title */
-  color: #fff; /* White text color */
 }
 
 .FlashcardGame {
@@ -34,16 +30,15 @@ body {
   background-color: #333; /* Dark grey flashcard background */
   border: 1px solid #ccc;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: default; /* Disable pointer cursor */
   margin-bottom: 20px;
   padding: 20px;
   height: 200px; /* Fixed height for flashcard */
   overflow: hidden; /* Hide overflow text */
-  transition: background-color 0.3s ease;
 }
 
 .Flashcard:hover {
-  background-color: #444; /* Darker grey on hover */
+  background-color: #333; /* No color change on hover */
 }
 
 .Question, .Answer {
@@ -51,9 +46,12 @@ body {
   font-size: 24px;
   line-height: 1.5;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+input[type="text"] {
+  width: 100%; /* Take up full width */
+  margin-bottom: 10px; /* Add space below input */
+  padding: 5px; /* Add padding to input */
 }
 
 button {
@@ -63,29 +61,10 @@ button {
   color: #fff;
   cursor: pointer;
   font-size: 18px;
-  margin-top: 20px;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #2980b9; /* Darker blue on hover */
-}
-
-@media (max-width: 768px) {
-  .FlashcardGame {
-    padding: 10px;
-  }
-
-  .Flashcard {
-    padding: 15px;
-  }
-
-  .Question, .Answer {
-    font-size: 20px;
-  }
-
-  button {
-    font-size: 16px;
-  }
 }
