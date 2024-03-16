@@ -30,13 +30,13 @@ GIF created with ... [ScreenToGif](https://www.screentogif.com/) for Windows
 
 ## Notes
 
-While building the app, I encountered a few challenges related to working with React hooks and event handling. Understanding how to properly use the useState() hook to manage state variables within functional components was initially challenging, especially when dealing with complex state structures.
+One significant challenge was integrating user input into the flashcard app. Enabling users to input guesses and providing feedback on correctness demanded a deep understanding of React's state management with useState(). Ensuring the visibility and functionality of the input field and submit button across flashcards, while revealing answers only upon submission, required meticulous attention to detail and effective state management.
 
-Additionally, passing data through props between parent and child components required careful consideration of component hierarchy and data flow. Ensuring that the correct data was being passed and accessed at each level of the component tree was crucial for the app's functionality.
+Another challenge arose in enabling smooth navigation between flashcards. Managing the current card index and maintaining input state during transitions demanded careful consideration of state persistence and component re-rendering.
 
-Implementing event handling, particularly for button clicks, required me to grasp the concept of handling events in React and attaching event listeners to components. This involved learning about event propagation and handling events efficiently to trigger the desired actions within the app.
+Moreover, aligning the app's visual appearance with requirements posed challenges. Balancing design aesthetics with functionality while adhering to provided CSS styles demanded creativity and attention to detail.
 
-Overall, while these challenges presented a learning curve, overcoming them provided valuable insights into React's core concepts and improved my understanding of building interactive applications with React.
+Overall, overcoming these challenges provided valuable insights into managing state in React and maintaining a seamless user experience, deepening my understanding of React's capabilities in building interactive web applications.
 
 ## License
 
