@@ -5,7 +5,10 @@ const Flashcard = ({ question, answer }) => {
   const [isCorrect, setIsCorrect] = useState(null);
 
   const handleSubmit = () => {
-    if (userGuess.trim().toLowerCase() === answer.toLowerCase()) {
+    const trimmedGuess = userGuess.trim().toLowerCase();
+    const trimmedAnswer = answer.toLowerCase();
+
+    if (trimmedGuess === trimmedAnswer || trimmedAnswer.includes(trimmedGuess)) {
       setIsCorrect(true);
     } else {
       setIsCorrect(false);
@@ -19,21 +22,31 @@ const Flashcard = ({ question, answer }) => {
     }
   };
 
+  const resetCard = () => {
+    setUserGuess("");
+    setIsCorrect(null);
+  };
+
   return (
     <div className={`Flashcard ${isCorrect !== null ? (isCorrect ? 'Correct' : 'Incorrect') : ''}`}>
       <div className="Question" onClick={toggleCard}>
         {question}
       </div>
-      <input
-        type="text"
-        value={userGuess}
-        onChange={(e) => setUserGuess(e.target.value)}
-        disabled={isCorrect !== null}
-      />
-      <button onClick={handleSubmit} disabled={isCorrect !== null}>
-        Submit
-      </button>
-      {isCorrect !== null && <div className="Answer">{answer}</div>}
+      {isCorrect === null && (
+        <div>
+          <input
+            type="text"
+            value={userGuess}
+            onChange={(e) => setUserGuess(e.target.value)}
+          />
+          <button onClick={handleSubmit}>Submit</button>
+        </div>
+      )}
+      {isCorrect !== null && (
+        <div className="Answer" onClick={resetCard}>
+          {isCorrect ? answer : "Incorrect, click to try again"}
+        </div>
+      )}
     </div>
   );
 };
