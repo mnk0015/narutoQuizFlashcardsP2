@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+  padding-left: 40px;
+  padding-right: 30px;
+  font-family: Arial, sans-serif;
+  background-color: #e74c3c; /* Naruto-themed red */
+  color: #fff; /* White text color */
+}
+
+.App {
+  display: flex;
+  flex-direction: column; /* To stack title and game */
+  align-items: center;
+  padding-top: 20px; /* Add space at the top */
+  max-width: 300px;
+}
+
+.Title {
+  font-size: 32px;
+  margin-bottom: 20px; /* Add space below the title */
+  color: #fff; /* White text color */
+}
+
+.FlashcardGame {
+  background-color: #222; /* Dark grey background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+}
+
+.Flashcard {
+  background-color: #333; /* Dark grey flashcard background */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 20px;
+  height: 200px; /* Fixed height for flashcard */
+  overflow: hidden; /* Hide overflow text */
+  transition: background-color 0.3s ease;
+}
+
+.Flashcard:hover {
+  background-color: #444; /* Darker grey on hover */
+}
+
+.Question, .Answer {
+  color: #fff; /* White text color */
+  font-size: 24px;
+  line-height: 1.5;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+button {
+  background-color: #3498db; /* Blue button color */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+  .FlashcardGame {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Flashcard {
+    padding: 15px;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .Question, .Answer {
+    font-size: 20px;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  button {
+    font-size: 16px;
+  }
 }
